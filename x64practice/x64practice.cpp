@@ -9,7 +9,7 @@ struct mnemonic
 	std::string set;
 };
 /*
-* instruction sets:
+* instruction sets (acording to msdn):
 * ABM
 * ADX
 * AES
@@ -46,6 +46,30 @@ struct mnemonic
 * SSSE3
 * XSAVE
 * 
+* instruction sets (acording to wikichip)
+* MMX
+* EMMX
+* SSE
+* SSE2
+* SSE3
+* SSSE3
+* SSE4.1
+* SSE4.2
+* SSE4a
+* AVX
+* AVX2
+* ABM
+* BMI1
+* BMI2
+* FMA3
+* AES
+* RdRand
+* SHA
+* ADX
+* CLMUL
+* F16C
+* 
+* 
 * not supported:
 * 3DNOW
 * 3DNOWEXT
@@ -72,14 +96,7 @@ std::vector<mnemonic> mnemonics =
 	{"AND",			"8086", "Logical AND"},
 	{"ANDN",		"BMI1", "Logical And-Not"},
 	{"BEXTR",		"BMI1", "Bit Field Extract"},
-	{"BLCFILL",     "8086", "Fill From Lowest Clear Bit"},
-	{"BLCI",		"8086", "Isolate Lowest Clear Bit"},
-	{"BLCIC",		"8086", "Isolate Lowest Clear Bit and Complement"},
-	{"BLCMSK",		"8086", "Mask From Lowest Clear Bit"},
-	{"BLCS",		"8086", "Set Lowest Clear Bit"},
-	{"BLSFILL",     "8086", "Fill From Lowest Set Bit"},
 	{"BLSI",		"BMI2", "Isolate Lowest Set Bit"},
-	{"BLSIC",		"8086", "Isolate Lowest Set Bit and Complement"},
 	{"BLSMSK",		"BMI2", "Mask From Lowest Set Bit"},
 	{"BLSR",		"8086", "Reset Lowest Set Bit"},
 	{"BSF",			"8086", "Bit Scan Forward"},
@@ -193,10 +210,8 @@ std::vector<mnemonic> mnemonics =
 	{"STD",			"8086", "Set Direction Flag"},
 	{"STOSQ",		"8086", "Store String"},
 	{"SUB",			"8086", "Subtract"},
-	{"T1MSKC",		"8086", "Inverse Mask From Trailing Ones"},
 	{"TEST",		"8086", "Test Bits"},
 	{"TZCNT",		"BMI1", "Count Trailing Zeros"},
-	{"TZMSK",		"8086", "Mask From Trailing Zeros"},
 	{"WRFSBASE",    "8086", "Write FS.base"},
 	{"WRGSBASE",    "8086", "Write GS.base"},
 	{"XADD",		"8086", "Exchange and Add"},
