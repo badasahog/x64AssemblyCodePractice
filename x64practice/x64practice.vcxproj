@@ -145,6 +145,9 @@
   <ItemGroup>
     <ClCompile Include="x64practice.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="test.asm" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
