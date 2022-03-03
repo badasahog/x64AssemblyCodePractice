@@ -1,1 +1,3 @@
-RDPRU
+cmpxchg8b
+sfence
+prefetch

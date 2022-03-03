@@ -87,6 +87,26 @@ struct mnemonic
 * TBM
 * XOP
 */
+/*
+* addps
+* addss
+* subps
+* subss
+* mulps
+* mulss
+* divps
+* divss
+* rcpps
+* rcpss
+* sqrtps
+* sqrtss
+* rsqrtps
+* rsqrtss
+* maxps
+* maxss
+* minps
+* minss
+*/
 std::vector<mnemonic> mnemonics =
 {
 	{"ANDN",		"BMI1", "Logical And-Not"},
@@ -225,25 +245,43 @@ std::vector<mnemonic> mnemonics =
 	{"PUNPCKLWD",	"MMX",	"Unpack and Interleave Low Words"},
 	{"MOVD",		"MMX",  "Move Doubleword"},
 	{"MOVQ",		"MMX",  "Move Quadword"},
-	{"SFENCE",		"EMMX", "Store Fence"},
-	{"PREFETCHT0",	"EMMX", "Move data closer to the processor using the T0 reference"},
-	{"PREFETCHT1",	"EMMX", "Move data closer to the processor using the T1 reference"},
-	{"PREFETCHT2",	"EMMX", "Move data closer to the processor using the T2 reference"},
-	{"PREFETCHNTA",	"EMMX", "Move data closer to the processor using the NTA reference"},
-	{"MOVNTQ",		"EMMX", "Move Non-temporal Quadword"},
-	{"MASKMOVQ",	"EMMX", "Mask Move Quadword"},
-	{"PMOVMSKB",	"EMMX", "Packed Move Mask Byte"},
-	{"PEXTRW",		"EMMX", "Extract Packed Word"},
-	{"PINSRW",		"EMMX", "Packed Insert Word"},
-	{"PSHUFW",		"EMMX", "—Packed Shuffle Words"},
-	{"PAVGB",		"EMMX", "Packed Average Unsigned Bytes"},
-	{"PAVGW",		"EMMX", "Packed Average Unsigned Words"},
-	{"PMAXSW",		"EMMX", "Packed Maximum Signed Words"},
-	{"PMAXUB",		"EMMX", "Packed Maximum Unsigned Bytes"},
-	{"PMINSW",		"EMMX", "Packed Minimum Signed Words"},
-	{"PMINUB",		"EMMX", "Packed Minimum Unsigned Bytes"},
-	{"PMULHUW",		"EMMX", "Packed Multiply High Unsigned Word"},
-	{"PSADBW",		"EMMX", "Packed Sum of Absolute Differences of Bytes into a Word"}
+	{"SFENCE",		"SSE/EMMX", "Store Fence"},
+	{"PREFETCHT0",	"SSE/EMMX", "Move data closer to the processor using the T0 reference"},
+	{"PREFETCHT1",	"SSE/EMMX", "Move data closer to the processor using the T1 reference"},
+	{"PREFETCHT2",	"SSE/EMMX", "Move data closer to the processor using the T2 reference"},
+	{"PREFETCHNTA",	"SSE/EMMX", "Move data closer to the processor using the NTA reference"},
+	{"MOVNTQ",		"SSE/EMMX", "Move Non-temporal Quadword"},
+	{"MASKMOVQ",	"SSE/EMMX", "Mask Move Quadword"},
+	{"PMOVMSKB",	"SSE/EMMX", "Packed Move Mask Byte"},
+	{"PEXTRW",		"SSE/EMMX", "Extract Packed Word"},
+	{"PINSRW",		"SSE/EMMX", "Packed Insert Word"},
+	{"PSHUFW",		"SSE/EMMX", "Packed Shuffle Words"},
+	{"PAVGB",		"SSE/EMMX", "Packed Average Unsigned Bytes"},
+	{"PAVGW",		"SSE/EMMX", "Packed Average Unsigned Words"},
+	{"PMAXSW",		"SSE/EMMX", "Packed Maximum Signed Words"},
+	{"PMAXUB",		"SSE/EMMX", "Packed Maximum Unsigned Bytes"},
+	{"PMINSW",		"SSE/EMMX", "Packed Minimum Signed Words"},
+	{"PMINUB",		"SSE/EMMX", "Packed Minimum Unsigned Bytes"},
+	{"PMULHUW",		"SSE/EMMX", "Packed Multiply High Unsigned Word"},
+	{"PSADBW",		"SSE/EMMX", "Packed Sum of Absolute Differences of Bytes into a Word"},
+	{"ADDPS",		"SSE", "Add Packed Single Precision Floating Point"},
+	{"ADDSS",		"SSE", "Add Scalar Single Precision Floating Point"},
+	{"SUBPS",		"SSE", "Subtract Packed Single Precision Floating Point"},
+	{"SUBSS",		"SSE", "Subtract Scalar Single Precision Floating Point"},
+	{"MULPS",		"SSE", "Multiply Packed Single Precision Floating Point"},
+	{"MULSS",		"SSE", "Multiply Scalar Single Precision Floating Point"},
+	{"DIVPS",		"SSE", "Multiply Scalar Single Precision Floating Point"},
+	{"DIVSS",		"SSE", "Divide Scalar Single Precision Floating Point"},
+	{"RCPPS",		"SSE", "Reciprocal Packed Single Precision Floating Point"},
+	{"RCPSS",		"SSE", "Reciprocal Scalar Single Precision Floating Point"},
+	{"SQRTPS",		"SSE", "Square Root Packed Single Precision Floating Point"},
+	{"SQRTSS",		"SSE", "Square Root Scalar Single Precision Floating Point"},
+	{"RSQRTPS",		"SSE", "Reciprocal Square Root Packed Single Precision Floating Point"},
+	{"RSQRTSS",		"SSE", "Reciprocal Square Root Scalar Single Precision Floating Point"},
+	{"MAXPS",		"SSE", "Maximum Packed Single Precision Floating Point"},
+	{"MAXSS",		"SSE", "Maximum Scalar Single Precision Floating Point"},
+	{"MINPS",		"SSE", "Minimum Packed Single Precision Floating Point"},
+	{"MINSS",		"SSE", "Minimum Scalar Single Precision Floating Point"}
 };
 
 int main()
