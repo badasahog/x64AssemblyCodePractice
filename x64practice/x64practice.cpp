@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <immintrin.h>
-#pragma intrinsic(__rdtsc)
 struct mnemonic
 {
 	std::string name;
@@ -295,9 +294,13 @@ std::vector<mnemonic> mnemonics =
 
 int main()
 {
+#ifdef __clang__
+	srand (time(0));//clang immintrin.h support workaround
+#else
 	uint64_t randomizerPtr = 0;
 	_rdseed64_step(&randomizerPtr);
 	srand(randomizerPtr);
+#endif
 	int points = 0;
 	while (points < 100)
 	{
