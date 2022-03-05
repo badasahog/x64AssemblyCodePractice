@@ -86,6 +86,7 @@ struct mnemonic
 * TBM
 * XOP
 */
+
 std::vector<mnemonic> mnemonics =
 {
 	{"ANDN",		"BMI1", "Logical And-Not"},
@@ -227,11 +228,8 @@ std::vector<mnemonic> mnemonics =
 	{"LEA",			"8086", "Load Effective Address"},
 	{"LEAVE",		"8086", "Delete Procedure Stack Frame"},
 	{"LFENCE",		"8086", "Load Fence"},
-	{"LLWPCB",		"8086", "Load Lightweight Profiling Control Block Address"},
 	{"LODS",		"8086", "Load String"},
 	{"LOOP",		"8086", "Loop"},
-	{"LWPINS",		"8086", "Lightweight Profiling Insert Record"},
-	{"LWPVAL",		"8086", "Lightweight Profiling Insert Value"},
 	{"MCOMMIT",		"8086", "Commit Stores to Memory"},
 	{"MFENCE",		"8086", "Memory Fence"},
 	{"MONITORX",	"8086", "Setup Monitor Address"},
@@ -279,7 +277,6 @@ std::vector<mnemonic> mnemonics =
 	{"SHLD",		"8086", "Shift Left Double"},
 	{"SHR",			"8086", "Shift Right"},
 	{"SHRD",		"8086", "Shift Right Double"},
-	{"SLWPCB",		"8086", "Store Lightweight Profiling Control Block Address"},
 	{"STC",			"8086", "Set Carry Flag"},
 	{"STD",			"8086", "Set Direction Flag"},
 	{"STOSQ",		"8086", "Store String"},
@@ -319,10 +316,9 @@ int main()
 
 				std::string answer;
 				std::cin >> answer;
-				if (answer == mnemonics[random].name)
-					break;
+				
 
-			} while (true);
+			} while (answer != mnemonics[random].name);
 		}
 	}
 }
