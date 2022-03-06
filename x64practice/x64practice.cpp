@@ -5,7 +5,7 @@ struct mnemonic
 {
 	std::string name;
 	std::string set;
-	std::string desc;
+	std::string desc; 
 };
 /*
 * instruction sets (acording to msdn):
@@ -68,7 +68,6 @@ struct mnemonic
 * CLMUL
 * F16C
 *
-*
 * not supported:
 * 3DNOW
 * 3DNOWEXT
@@ -85,6 +84,10 @@ struct mnemonic
 * SYSCALL
 * TBM
 * XOP
+* 
+* 
+* tbd:
+* what set is movq from?
 */
 
 std::vector<mnemonic> mnemonics =
@@ -199,7 +202,6 @@ std::vector<mnemonic> mnemonics =
 	{"CBW",			"8086", "Convert to Sign-Extended"},
 	{"CLC",			"8086", "Clear Carry Flag"},
 	{"CLD",			"8086", "Clear Direction Flag"},
-	{"CLFLUSH",     "8086", "Cache Line Flush"},
 	{"CLFLUSHOPT",  "8086", "Optimized Cache Line Flush"},
 	{"CLZERO",		"8086", "Zero Cache Line"},
 	{"CMC",			"8086", "Complement Carry Flag"},
@@ -227,11 +229,9 @@ std::vector<mnemonic> mnemonics =
 	{"LDS",			"8086", "Load Far Pointer"},
 	{"LEA",			"8086", "Load Effective Address"},
 	{"LEAVE",		"8086", "Delete Procedure Stack Frame"},
-	{"LFENCE",		"8086", "Load Fence"},
 	{"LODS",		"8086", "Load String"},
 	{"LOOP",		"8086", "Loop"},
 	{"MCOMMIT",		"8086", "Commit Stores to Memory"},
-	{"MFENCE",		"8086", "Memory Fence"},
 	{"MONITORX",	"8086", "Setup Monitor Address"},
 	{"MOV",			"8086", "Move"},
 	{"MOVBE",		"8086", "Move Big Endian"},
@@ -249,7 +249,6 @@ std::vector<mnemonic> mnemonics =
 	{"OR",			"8086", "Logical OR"},
 	{"OUT",			"8086", "Output to Port"},
 	{"OUTS",		"8086", "Output String"},
-	{"PAUSE",		"8086", "Pause"},
 	{"POP",			"8086", "Pop Stack"},
 	{"POPF",		"8086", "POP to rFLAGS"},
 	{"PREFETCH",	"8086", "Prefetch L1 Data-Cache Line"},
@@ -287,12 +286,126 @@ std::vector<mnemonic> mnemonics =
 	{"XADD",		"8086", "Exchange and Add"},
 	{"XCHG",		"8086", "Exchange"},
 	{"XLAT",		"8086", "Translate Table Index"},
+	{"ADDPD",		"SSE2", "Add Packed Double Precision Floating Point"},
+	{"ADDSD",		"SSE2", "Add Scalar Double Precision Floating Point"},
+	{"SUBPD",		"SSE2", "Subtract Packed Double Precision Floating Point"},
+	{"SUBSD",		"SSE2", "Subtract Scalar Double Precision Floating Point"},
+	{"MULPD",		"SSE2", "Multiply Packed Double Precision Floating Point"},
+	{"MULSD",		"SSE2", "Multiply Scalar Double Precision Floating Point"},
+	{"DIVPD",		"SSE2", "Divide Packed Double Precision Floating Point"},
+	{"DIVSD",		"SSE2", "Divide Scalar Double Precision Floating Point"},
+	{"MAXPD",		"SSE2", "Maximum Packed Double Precision Floating Point"},
+	{"MAXSD",		"SSE2", "Maximum Scalar Double Precision Floating Point"},
+	{"MINPD",		"SSE2", "Minimum Packed Double Precision Floating Point"},
+	{"MINSD",		"SSE2", "Minimum Scalar Double Precision Floating Point"},
+	{"PADDB",		"SSE2", "Packed Add Bytes"},
+	{"PADDW",		"SSE2", "Packed Add Words"},
+	{"PADDD",		"SSE2", "Packed Add Doublewords"},
+	{"PADDQ",		"SSE2", "Packed Add Quadwords"},
+	{"PADDUSB",		"SSE2", "Packed Add with Unsigned Saturation Bytes "},
+	{"PADDUSW",		"SSE2", "Packed Add with Unsigned Saturation Words"},
+	{"PSUBB",		"SSE2", "Packed Subtract Bytes"},
+	{"PSUBW",		"SSE2", "Packed Subtract Words"},
+	{"PSUBD",		"SSE2", "Packed Subtract Doublewords"},
+	{"PSUBQ",		"SSE2", "Packed Subtract Quadword"},
+	{"PSUBSB",		"SSE2", "Packed Subtract Signed With Saturation Bytes"},
+	{"PSUBSW",		"SSE2", "Packed Subtract Signed With Saturation Words"},
+	{"PSUBUSB",		"SSE2", "Packed Subtract Unsigned With Saturation Bytes"},
+	{"PSUBUSW",		"SSE2", "Packed Subtract Unsigned With Saturation Words"},
+	{"PMADDWD",		"SSE2", "Packed Multiply and Add Word to Doubleword"},
+	{"PMULHW",		"SSE2", "Packed Multiply High Signed Word"},
+	{"PMULLW",		"SSE2", "Packed Multiply Low Signed Word"},
+	{"PMULUDQ",		"SSE2", "Packed Multiply Unsigned Doubleword to Quadword"},
+	{"RCPPS",		"SSE2", "Reciprocal Packed Single Precision Floating Point"},
+	{"RCPSS",		"SSE2", "Reciprocal Scalar Single Precision Floating Point"},
+	{"SQRTPD",		"SSE2", "Square Root Packed Double Precision Floating Point"},
+	{"SQRTSD",		"SSE2", "Square Root Scalar Double Precision Floating Point"},
+	{"PADDSB",		"SSE2", "Packed Add with Signed Saturation Bytes"},
+	{"PADDSW",		"SSE2", "Packed Add with Signed Saturation Words"},
+	{"ANDNPD",		"SSE2",	"AND NOT Packed Double Precision Floating Point"},
+	{"ANDNPS",		"SSE2",	"AND NOT Packed Single Precision Floating Point"},
+	{"ANDPD",		"SSE2",	"AND Packed Double Precision Floating Point"},
+	{"PAND",		"SSE2",	"Packed AND"},
+	{"PANDN",		"SSE2",	"Packed AND NOT"},
+	{"POR",			"SSE2",	"Packed OR"},
+	{"PSLLDQ",		"SSE2",	"Packed Shift Left Logical Double Quadword"},
+	{"PSLLQ",		"SSE2",	"Packed Shift Left Logical Quadwords"},
+	{"PSLLD",		"SSE2",	"Packed Shift Left Logical Doublewords"},
+	{"PSLLW",		"SSE2",	"Packed Shift Left Logical Words"},
+	{"PSRAD",		"SSE2",	"Packed Shift Right Arithmetic Doublewords"},
+	{"PSRAW",		"SSE2",	"Packed Shift Right Arithmetic Words"},
+	{"PSRLDQ",		"SSE2",	"Packed Shift Right Logical Double Quadword"},
+	{"PSRLQ",		"SSE2",	"Packed Shift Right Logical Quadwords"},
+	{"PSRLD",		"SSE2",	"Packed Shift Right Logical Doublewords"},
+	{"PSRLW",		"SSE2",	"Packed Shift Right Logical Words"},
+	{"PXOR",		"SSE2",	"Packed Exclusive OR"},
+	{"ORPD",		"SSE2",	"OR Packed Double Precision Floating Point"},
+	{"XORPD",		"SSE2",	"XOR Packed Double Precision Floating Point"},
+	{"CMPPD",		"SSE2",	"Compare Packed Double Precision Floating Point"},
+	{"CMPSx",		"SSE2",	"Compare Strings"},
+	{"COMISD",		"SSE2",	"Compare Ordered Scalar Double Precision Floating Point"},
+	{"UCOMISD",		"SSE2",	"Unordered Compare Scalar Double Precision Floating Point"},
+	{"PCMPxxB",		"SSE2",	"Packed Compare Bytes"},
+	{"PCMPxxW",		"SSE2",	"Packed Compare Words"},
+	{"PCMPxxD",		"SSE2",	"Packed Compare Doublewords"},
+	{"CVTDQ2PD",	"SSE2",	"Convert Packed Doubleword Integers to Packed Double Precision Floating Point"},
+	{"CVTDQ2PS",	"SSE2",	"Convert Packed Doubleword Integers to Packed Single Precision Floating Point"},
+	{"CVTPD2PI",	"SSE2",	"Convert Packed Double Precision Floating Point to Packed Doubleword Integers"},
+	{"CVTPD2DQ",	"SSE2",	"Convert Packed Double Precision Floating Point to Packed Doubleword Integer"},
+	{"CVTPD2PS",	"SSE2",	"Convert Packed Double Precision Floating Point to Packed Single Precision Floating Point"},
+	{"CVTPI2PD",	"SSE2",	"Convert Packed Doubleword Integers to Packed Double Precision Floating Point"},
+	{"CVTPS2DQ",	"SSE2",	"Convert Packed Single Precision Floating Point to Packed Doubleword Integers"},
+	{"CVTPS2PD",	"SSE2",	"Convert Packed Single Precision Floating Point to Packed Double Precision Floating Point"},
+	{"CVTSD2SI",	"SSE2",	"Convert Scalar Double Precision Floating Point to Signed Doubleword or Quadword Integer"},
+	{"CVTSD2SS",	"SSE2",	"Convert Scalar Double Precision Floating Point to Scalar Single Precision Floating Point"},
+	{"CVTSI2SD",	"SSE2",	"Convert Signed Doubleword or Quadword Integer to Scalar Double Precision Floating Point"},
+	{"CVTSI2SS",	"SSE2",	"Convert Signed Doubleword or Quadword Integer to Scalar Single Precision Floating Point"},
+	{"CVTSS2SD",	"SSE2",	"Convert Scalar Single Precision Floating Point to Scalar Double Precision Floating Point"},
+	{"CVTSS2SI",	"SSE2",	"Convert Scalar Single Precision Floating Point to Signed Doubleword or Quadword Integer"},
+	{"CVTTPD2PI",	"SSE2",	"Convert Packed Double Precision Floating Point to Packed Doubleword Integers, Truncated"},
+	{"CVTTPD2DQ",	"SSE2",	"Convert Packed Double Precision Floating Point to Packed Doubleword Integer, Truncated"},
+	{"CVTTPS2DQ",	"SSE2",	"Convert Packed Single Precision Floating Point to Packed Doubleword Integers, Truncated"},
+	{"CVTTPS2PI",	"SSE2",	"Convert Packed Single Precision Floating Point to Packed Doubleword Integers, Truncated"},
+	{"CVTTSD2SI",	"SSE2",	"Convert Scalar Double Precision Floating Point to Signed Double or Quadword Integer, Truncated"},
+	{"CVTTSS2SI",	"SSE2",	"Convert Scalar Single-Precision Floating Point to Signed Double or Quadword Integer, Truncated"},
+	{"MOVSD",		"SSE2",	"Move String Doubleword"},//tbd
+	{"MOVAPD",		"SSE2",	"Move Aligned Packed Double Precision Floating Point"},
+	{"MOVUPD",		"SSE2",	"Move Unaligned Packed Double Precision Floating Point"},
+	{"MOVHPD",		"SSE2",	"Move High Packed Double Precision Floating Point"},
+	{"MOVLPD",		"SSE2",	"Move Low Packed Double Precision Floating Point"},
+	//{"MOVDQ2Q",		"SSE2",	"Move Quadword to Quadword"}, //tbd
+	//{"MOVQ2DQ",		"SSE2",	"Move Quadword to Quadword"}, //tbd
+	{"MOVNTPD",		"SSE2",	"Move Non Temporal Packed Double Precision Floating Point"},
+	{"MOVNTDQ",		"SSE2",	"Move Non Temporal Double Quadword"},
+	{"MOVNTI",		"SSE2",	"Move Non Temporal Doubleword or Quadword"},
+	{"MASKMOVDQU",	"SSE2",	"Masked Move Double Quadword Unaligned"},
+	{"PMOVMSKB",	"SSE2",	"Packed Move Mask Byte"},
+	{"PSHUFD",		"SSE2",	"Packed Shuffle Doublewords"},
+	{"PSHUFHW",		"SSE2",	"Packed Shuffle High Words"},
+	{"PSHUFLW",		"SSE2",	"Packed Shuffle Low Words"},
+	{"UNPCKHPD",	"SSE2",	"Unpack High Double Precision Floating Point"},
+	{"UNPCKLPD",	"SSE2",	"Unpack Low Double Precision Floating Point"},
+	{"PUNPCKHBW",	"SSE2",	"Unpack and Interleave High Bytes"},
+	{"PUNPCKHWD",	"SSE2",	"Unpack and Interleave High Words"},
+	{"PUNPCKHDQ",	"SSE2",	"Unpack and Interleave High Doublewords"},
+	{"PUNPCKHQDQ",	"SSE2",	"Unpack and Interleave High Quadwords"},
+	{"PUNPCKLBW",	"SSE2",	"Unpack and Interleave Low Bytes"},
+	{"PUNPCKLWD",	"SSE2",	"Unpack and Interleave Low Words"},
+	{"PUNPCKLDQ",	"SSE2",	"Unpack and Interleave Low Doublewords"},
+	{"PUNPCKLQDQ",	"SSE2",	"Unpack and Interleave Low Quadwords"},
+	{"PACKSSDW",	"SSE2",	"Pack with Signed Saturation Doubleword to Word"},
+	{"PACKSSWB",	"SSE2",	"Pack with Signed Saturation Word to Byte"},
+	{"PACKUSWB",	"SSE2",	"Pack with Unsigned Saturation Word to Byte"},
+	{"CLFLUSH",		"SSE2", "Cache Line Flush"},
+	{"MFENCE",		"SSE2", "Memory Fence"},
+	{"LFENCE",		"SSE2", "Load Fence"},
+	{"PAUSE",		"SSE2", "Pause"},
 };
 
 int main()
 {
 #ifdef __clang__
-	srand (time(0));//clang immintrin.h support workaround
+	srand (static_cast<uint32_t>(time(nullptr)));//clang immintrin.h support workaround
 #else
 	uint64_t randomizerPtr = 0;
 	_rdseed64_step(&randomizerPtr);
@@ -301,7 +414,8 @@ int main()
 	int points = 0;
 	while (points < 100)
 	{
-		int random = rand() % mnemonics.size();
+		uint64_t random = static_cast<uint64_t>(rand()) % mnemonics.size();
+		if (mnemonics[random].set != "SSE2")continue;
 		std::cout << "[" << mnemonics[random].set << "]" << mnemonics[random].desc << '\n';
 		std::string answer;
 		std::cin >> answer;
@@ -314,7 +428,6 @@ int main()
 				std::cout << "wrong: " << mnemonics[random].name << '\n';
 				points--;
 
-				std::string answer;
 				std::cin >> answer;
 				
 
