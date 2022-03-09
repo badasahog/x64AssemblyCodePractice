@@ -410,7 +410,23 @@ std::vector<mnemonic> mnemonics =
 	{"MOVDDUP",		"SSE3", "Move and Duplicate Double Precision Floating Point"},
 	{"MOVSHDUP",	"SSE3", "Move High and Duplicate Single Precision"},
 	{"MOVSLDUP",	"SSE3", "Move Low and Duplicate Single Precisio"},
-	{"FISTTP",		"SSE3", "Floating Point Integer Truncate and Store"}
+	{"FISTTP",		"SSE3", "Floating Point Integer Truncate and Store"},
+	{"PSIGND",		"SSSE3", "Packed Sign Doubleword"},
+	{"PSIGNW",		"SSSE3", "Packed Sign Word"},
+	{"PSIGNB",		"SSSE3", "Packed Sign Byte"},
+	{"PHADDD",		"SSSE3", "Packed Horizontal Add Doubleword"},
+	{"PHADDW",		"SSSE3", "Packed Horizontal Add Word"},
+	{"PHADDSW",		"SSSE3", "Packed Horizontal Add with Saturation Word"},
+	{"PHSUBD",		"SSSE3", "Packed Horizontal Subtract Doubleword"},
+	{"PHSUBW",		"SSSE3", "Packed Horizontal Subtract Word"},
+	{"PHSUBSW",		"SSSE3", "Packed Horizontal Subtract with Saturation Word"},
+	{"PMADDUBSW",	"SSSE3", "Packed Multiply and Add Unsigned Byte to Signed Word"},
+	{"PABSD",		"SSSE3", "Packed Absolute Value Signed Doubleword"},
+	{"PABSW",		"SSSE3", "Packed Absolute Value Signed Word"},
+	{"PABSB",		"SSSE3", "Packed Absolute Value Signed Byte"},
+	{"PMULHRSW",	"SSSE3", "Packed Multiply High with Round and Scale Words"},
+	{"PSHUFB",		"SSSE3", "Packed Shuffle Byte"},
+	{"PALIGNR",		"SSSE3", "Packed Align Right"},
 };
 
 int main()
