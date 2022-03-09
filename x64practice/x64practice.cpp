@@ -476,6 +476,14 @@ std::vector<mnemonic> mnemonics =
 	{"PCMPEQQ",		"SSE4.1", "Packed Compare Equal Quadwords"},
 	{"PACKUSDW",	"SSE4.1", "Pack with Unsigned Saturation Doubleword to Word"},
 	{"MOVNTDQA",	"SSE4.1", "Move Non Temporal Double Quadword Aligned"},
+	{"CRC32",		"SSE4.2", "CRC32 Cyclical Redundancy Check"},
+	{"PCMPESTRI",	"SSE4.2", "Packed Compare Explicit Length Strings Return Index"},
+	{"PCMPESTRM",	"SSE4.2", "Packed Compare Explicit Length Strings Return Mask"},
+	{"PCMPISTRI",	"SSE4.2", "Packed Compare Implicit Length Strings Return Index"},
+	{"PCMPISTRM",	"SSE4.2", "Packed Compare Implicit Length Strings Return Mask"},
+	{"PCMPGTQ",		"SSE4.2", "Packed Compare Greater Than Signed Quadwords"},
+	{"POPCNT",		"SSE4.2", "Bit Population Count"},
+
 };
 
 int main()
