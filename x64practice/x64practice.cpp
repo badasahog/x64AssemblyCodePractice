@@ -485,10 +485,10 @@ std::vector<mnemonic> mnemonics =
 	{"PCMPISTRM",	"SSE4.2", "Packed Compare Implicit Length Strings Return Mask"},
 	{"PCMPGTQ",		"SSE4.2", "Packed Compare Greater Than Signed Quadwords"},
 	{"POPCNT",		"SSE4.2", "Bit Population Count"},
-	{"EXTRQ",	"SSE4a", "Extract Field From Register"},
-	{"INSERTQ",	"SSE4a", "Insert Field"},
-	{"MOVNTSD",	"SSE4a", "Move Non Temporal Scalar Double Precision Floating Point"},
-	{"MOVNTSS",	"SSE4a", "Move Non Temporal Scalar Single Precision Floating Point"},
+	{"EXTRQ",		"SSE4a", "Extract Field From Register"},
+	{"INSERTQ",		"SSE4a", "Insert Field"},
+	{"MOVNTSD",		"SSE4a", "Move Non Temporal Scalar Double Precision Floating Point"},
+	{"MOVNTSS",		"SSE4a", "Move Non Temporal Scalar Single Precision Floating Point"},
 
 
 };
